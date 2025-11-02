@@ -67,9 +67,11 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
 
   return (
     <>
-      <p className="text-stone-400 text-sm mb-2 select-none text-center">
-        Double-click a todo to edit
-      </p>
+      {todos.length > 0 && (
+        <p className="text-stone-400 text-sm mb-2 select-none text-center">
+          Double-click a todo to edit
+        </p>
+      )}
       <DndContext
         sensors={sensors}
         collisionDetection={closestCenter}
