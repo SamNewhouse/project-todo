@@ -15,7 +15,7 @@ const HomePage: NextPage = () => {
       <div className="flex flex-col items-center bg-gray-100 px-4">
         <div className="w-full mt-2 p-8 bg-white rounded-3xl border border-gray-300 shadow-2xl mb-10 md:max-w-2xl md:p-12 md:mb-12">
           <h1 className="mb-6 md:mb-10 text-5xl text-center text-stone-900 font-heading font-extrabold drop-shadow md:text-6xl md:mb-8">
-            Todo Project's
+            Project Manager
           </h1>
           <p className="mb-10 text-xl text-center text-stone-600 font-medium md:text-lg md:mb-8">
             Start your ideas. Stay organized.
