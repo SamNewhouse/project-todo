@@ -8,7 +8,7 @@ export interface DraggableTodoProps {
   isFlashed: boolean;
   children: React.ReactNode;
   onDoubleClick?: React.MouseEventHandler<HTMLLIElement>;
-  disabled?: boolean; // <- NEW
+  disabled?: boolean;
 }
 
 const DraggableTodo: React.FC<DraggableTodoProps> = ({
@@ -30,7 +30,9 @@ const DraggableTodo: React.FC<DraggableTodoProps> = ({
       {...attributes}
       {...(!disabled ? listeners : {})}
       className={`
-        group relative flex items-center justify-between bg-stone-200 rounded-xl px-7 py-10 h-16 text-xl transition-shadow hover:shadow-md
+        group relative flex items-center justify-between bg-stone-200 rounded-xl
+        px-5 py-5 text-lg transition-shadow hover:shadow-md
+        sm:px-7 sm:py-7 sm:text-xl
         ${todo.completed ? "opacity-80" : ""}
         ${isEditing ? "cursor-default hover:cursor-default" : "cursor-pointer hover:cursor-default"}
         ${isFlashed ? "shadow-lg" : ""}
@@ -45,7 +47,12 @@ const DraggableTodo: React.FC<DraggableTodoProps> = ({
       }}
       onDoubleClick={onDoubleClick}
     >
-      {children}
+      <span
+        className="font-semibold flex-1 truncate text-stone-700 sm:text-stone-500 group-hover:text-stone-800 transition-colors duration-300 ease-in-out text-xl sm:text-2xl"
+        style={{ lineHeight: "44px" }}
+      >
+        {children}
+      </span>
     </li>
   );
 };

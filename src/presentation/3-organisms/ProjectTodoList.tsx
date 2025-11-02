@@ -8,6 +8,7 @@ import {
   DndContext,
   closestCenter,
   PointerSensor,
+  TouchSensor,
   useSensor,
   useSensors,
   DragEndEvent,
@@ -20,7 +21,7 @@ interface ProjectTodoListProps {
   project: Project;
 }
 
-const FLASH_DURATION = 700; // ms
+const FLASH_DURATION = 700;
 
 const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
   const dispatch = useDispatch();
@@ -33,7 +34,10 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
     setTodos(project.todos);
   }, [project.todos]);
 
-  const sensors = useSensors(useSensor(PointerSensor, { activationConstraint: { distance: 4 } }));
+  const sensors = useSensors(
+    useSensor(PointerSensor, { activationConstraint: { distance: 4 } }),
+    useSensor(TouchSensor, { activationConstraint: { delay: 250, tolerance: 5 } }),
+  );
 
   const handleEditStart = (todoId: string, currentText: string) => {
     setEditingId(todoId);
@@ -83,7 +87,7 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
                   todo={todo}
                   isEditing={isEditing}
                   isFlashed={isFlashed}
-                  disabled={isEditing} // <-- Only disables drag for currently editing todo
+                  disabled={isEditing}
                   onDoubleClick={() => !isEditing && handleEditStart(todo.id, todo.text)}
                 >
                   <>
@@ -101,6 +105,7 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
                             }),
                           )
                         }
+                        onDoubleClick={(e) => e.stopPropagation()}
                       />
                       {isEditing ? (
                         <TextInput

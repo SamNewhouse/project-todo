@@ -21,9 +21,9 @@ const Checkbox: React.FC<CheckboxProps> = ({ label, className, checked, ...props
         {...props}
       />
       {checked && (
-        <svg className="pointer-events-none" width="18" height="18" viewBox="0 0 18 18">
+        <svg className="pointer-events-none" width="20" height="20" viewBox="0 0 20 20">
           <polyline
-            points="4,9 8,13 14,5"
+            points="5,10 9,15 15,6"
             fill="none"
             stroke="#fff"
             strokeWidth="2.5"
@@ -33,7 +33,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ label, className, checked, ...props
         </svg>
       )}
     </span>
-    {label && <span className="text-lg text-stone-700 font-medium ml-1">{label}</span>}
+    {label && <span className="text-base sm:text-lg text-stone-700 font-medium ml-1">{label}</span>}
   </label>
 );
 
