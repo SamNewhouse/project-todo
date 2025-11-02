@@ -7,14 +7,8 @@ interface Props {
 
 const BaseLayout: FC<Props> = ({ children, className }) => {
   return (
-    <div
-      className={`min-h-screen w-full bg-gradient-to-t from-gray-200 via-gray-100 to-gray-50 ${
-        className ?? ""
-      }`}
-    >
-      <div className="w-full max-w-full px-3 py-6 md:max-w-5xl md:px-6 md:py-12 mx-auto">
-        {children}
-      </div>
+    <div className={`min-h-screen w-full ${className ?? ""}`}>
+      <div className="w-full max-w-full md:max-w-5xl pt-8 md:pt-12 mx-auto">{children}</div>
     </div>
   );
 };

@@ -12,10 +12,10 @@ const HomePage: NextPage = () => {
 
   return (
     <BaseLayout className="home">
-      <div className="flex min-h-screen flex-col items-center bg-gray-100 px-2 md:pt-8">
+      <div className="flex min-h-screen flex-col items-center bg-gray-100 px-4">
         <div className="w-full mt-2 p-8 bg-white rounded-3xl border border-gray-300 shadow-2xl mb-10 md:max-w-2xl md:p-12 md:mb-12">
-          <h1 className="mb-6 md:mb-10 text-4xl text-center text-stone-900 font-heading font-extrabold drop-shadow md:text-5xl md:mb-8">
-            Create a New Project
+          <h1 className="mb-6 md:mb-10 text-5xl text-center text-stone-900 font-heading font-extrabold drop-shadow md:text-6xl md:mb-8">
+            Todo Project's
           </h1>
           <p className="mb-10 text-xl text-center text-stone-600 font-medium md:text-lg md:mb-8">
             Start your ideas. Stay organized.
@@ -23,7 +23,7 @@ const HomePage: NextPage = () => {
           <ProjectForm />
         </div>
         <section className="w-full md:max-w-2xl mt-2">
-          <h2 className="text-3xl font-bold text-stone-800 mb-8 text-center tracking-tight md:text-2xl md:mb-6">
+          <h2 className="text-2xl font-bold text-stone-800 mb-8 text-center tracking-tight md:text-3xl md:mb-6">
             Current Projects
           </h2>
           {projects.length === 0 ? (
