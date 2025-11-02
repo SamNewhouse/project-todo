@@ -12,7 +12,7 @@ const TextInput: React.FC<TextInputProps> = ({ label, className, ...props }) => 
       className={`
         w-full border-2 border-gray-300 rounded-xl px-4 py-3 text-base bg-gray-50 shadow-inner outline-none transition
         focus:border-blue-500 focus:bg-white
-        sm:px-5 sm:py-3 sm:text-lg
+        md:px-5 md:py-3 md:text-lg
         ${className ?? ""}
       `}
       {...props}

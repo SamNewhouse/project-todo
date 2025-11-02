@@ -12,7 +12,7 @@ const BaseLayout: FC<Props> = ({ children, className }) => {
         className ?? ""
       }`}
     >
-      <div className="w-full max-w-full px-3 py-6 sm:max-w-5xl sm:px-6 sm:py-12 mx-auto">
+      <div className="w-full max-w-full px-3 py-6 md:max-w-5xl md:px-6 md:py-12 mx-auto">
         {children}
       </div>
     </div>

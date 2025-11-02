@@ -26,7 +26,7 @@ const TodoInput: React.FC<TodoInputProps> = ({ projectId }) => {
 
   return (
     <form
-      className="flex w-full gap-3 mb-8 flex-col sm:flex-row"
+      className="flex w-full gap-3 mb-8 flex-col md:flex-row"
       onSubmit={(e) => {
         e.preventDefault();
         handleAdd();
@@ -37,9 +37,9 @@ const TodoInput: React.FC<TodoInputProps> = ({ projectId }) => {
         onChange={(e) => setValue(e.target.value)}
         onKeyDown={(e) => e.key === "Enter" && handleAdd()}
         placeholder="Add a todo..."
-        className="border border-gray-300 rounded px-5 py-4 text-lg shadow-none bg-white flex-1 sm:w-auto sm:text-base sm:px-3 sm:py-2"
+        className="border border-gray-300 rounded px-5 py-4 text-lg shadow-none bg-white flex-1 md:w-auto md:text-base md:px-3 md:py-2"
       />
-      <Button type="submit" className="sm:w-auto sm:text-base sm:px-8">
+      <Button type="submit" className="md:w-auto md:text-base md:px-8">
         Add
       </Button>
     </form>

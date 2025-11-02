@@ -33,7 +33,7 @@ const Checkbox: React.FC<CheckboxProps> = ({ label, className, checked, ...props
         </svg>
       )}
     </span>
-    {label && <span className="text-base sm:text-lg text-stone-700 font-medium ml-1">{label}</span>}
+    {label && <span className="text-base md:text-lg text-stone-700 font-medium ml-1">{label}</span>}
   </label>
 );
 
