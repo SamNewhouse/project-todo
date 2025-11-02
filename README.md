@@ -1,39 +1,81 @@
-# Next.js TypeScript Tailwind Boilerplate by Sam Newhouse
+# Next.js Redux Todo Projects App
 
-Use `npm create nttb app-name` or `npx create-nttb app-name` to get started.
+This is a productivity tool for managing projects and todos using your custom Next.js boilerplate.  
 
-This will download all boilerplate files ready for you to use.
+It’s built with atomic design principles for maximum reusability and clarity.
 
-## Getting Started
+---
 
-First, run the development server:
+## 🚀 Main Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Create and manage multiple projects
+- Add, edit, complete, and reorder todos (with drag-and-drop)
+- Instant UI updates and local data persistence
+- Modern, fully responsive UI (Tailwind CSS)
+- Accessible by keyboard and on mobile/desktop
+
+---
+## 🏗️ Tech Stack
+
+- [Next.js](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
+- [redux-persist](https://github.com/rt2zz/redux-persist)
+- [@dnd-kit/core](https://dndkit.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+
+
+---
+
+## ⚡ Features
+
+- Create, rename, and open projects
+- Add, complete, edit, delete, and reorder todos in each project
+- Real-time drag-and-drop reordering
+- Beautiful transitions and hover effects
+- Fully responsive for desktop and mobile
+- Accessible keyboard navigation
+- Data is persistent locally
+
+---
+
+## 📁 Project Folder Structure (Main SRC Folders)
+
+```
+src
+├── pages                # Next.js route files & API routes
+│   ├── api              # API endpoints (e.g. for serverless functions)
+│   └── project          # Dynamic project page routes
+├── presentation         # Main UI components, structured by atomic design
+│   ├── 1-atoms          # Fundamental UI elements (buttons, inputs, icons)
+│   │   └── icons        # Icon components (SVGs, etc.)
+│   ├── 2-molecules      # Small composed components (forms, draggable todos, etc.)
+│   ├── 3-organisms      # Larger reusable UI blocks (todo lists, panels, etc.)
+│   ├── 4-layouts        # Layout components for page wrappers
+│   └── 5-pages          # Page-level components mapping to app routes
+├── store                # Redux store logic and slices
+└── styles               # Global CSS and Tailwind configuration
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Getting Started
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Clone the repo:  
+   `git clone https://github.com/yourusername/nextjs-redux-todo-projects.git`
+2. Install dependencies:  
+   `npm install`
+3. Run the app:  
+   `npm run dev` (view at [http://localhost:3000](http://localhost:3000))
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+---
 
-## Learn More
+## 📣 Contributing
 
-To learn more about Next.js, TypeScript, and Tailwind, take a look at the following resources:
+PRs and suggestions welcome!
 
-- [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
-- [TypeScript](https://www.typescriptlang.org/) - Learn about TypeScript and all of its features.
-- [Tailwind CSS](https://tailwindcss.com/) - The holy grail of all things Tailwind.
+---
 
-## License
+## 📄 License
 
-This project is licensed under the ISC License - see the [LICENSE](./LICENSE) file for details.
+MIT — use freely!
