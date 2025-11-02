@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from "react";
 import TextInput from "../1-atoms/TextInput";
 import Button from "../1-atoms/Button";

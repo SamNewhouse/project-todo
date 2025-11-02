@@ -1,6 +1,8 @@
+"use client";
+
 import { NextPage } from "next";
 import BaseLayout from "../4-layouts/BaseLayout";
-import { useRouter } from "next/router";
+import { useParams } from "next/navigation";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store";
 import TodoInput from "../2-molecules/TodoInput";
@@ -9,8 +11,8 @@ import Link from "next/link";
 import LeftArrowIcon from "../1-atoms/icons/LeftArrowIcon";
 
 const ProjectPage: NextPage = () => {
-  const router = useRouter();
-  const { id } = router.query;
+  const params = useParams();
+  const id = params.id;
 
   const project = useSelector((state: RootState) =>
     state.projects.projects.find((p) => p.id === id),

@@ -1,7 +1,9 @@
+"use client";
+
 import React, { useState } from "react";
 import TextInput from "../1-atoms/TextInput";
 import Button from "../1-atoms/Button";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { addProject } from "../../store/projectsSlice";
 

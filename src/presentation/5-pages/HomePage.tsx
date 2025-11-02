@@ -1,3 +1,4 @@
+"use client";
 import { NextPage } from "next";
 import BaseLayout from "../4-layouts/BaseLayout";
 import ProjectForm from "../2-molecules/ProjectForm";
@@ -46,7 +47,7 @@ const HomePage: NextPage = () => {
                     >
                       {project.name}
                     </span>
-                    <span className="ml-5 inline-flex items-center justify-center rounded-full bg-stone-500 text-white font-semibold text-md w-7 h-7 group-hover:bg-blue-700 transition-colors duration-300 ease-in-out md:ml-6 md:w-8 md:h-8 md:text-xl px-0 py-0">
+                    <span className="ml-5 inline-flex items-center justify-center rounded-full bg-stone-500 text-white font-bold  w-7 h-7 group-hover:bg-blue-700 transition-colors duration-300 ease-in-out md:ml-6 md:w-7 md:h-7 text-lg px-0 py-0">
                       {project.todos.length}
                     </span>
                   </Link>

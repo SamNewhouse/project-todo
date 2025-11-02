@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { removeTodo, editTodo, toggleTodo, reorderTodos, Project } from "../../store/projectsSlice";
