@@ -4,7 +4,12 @@ import Providers from "./providers";
 import { ReactNode } from "react";
 import { Inter, Space_Grotesk } from "next/font/google";
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1 };
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 const inter = Inter({
   subsets: ["latin"],
