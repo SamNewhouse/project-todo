@@ -22,7 +22,7 @@ const ProjectForm: React.FC = () => {
   };
 
   return (
-    <form className="space-y-3 md:space-y-6 w-full" onSubmit={handleSubmit}>
+    <form className="project-form space-y-3 md:space-y-6 w-full" onSubmit={handleSubmit}>
       <TextInput
         label="Project Name"
         value={name}

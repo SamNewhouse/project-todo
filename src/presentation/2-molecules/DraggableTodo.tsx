@@ -30,7 +30,7 @@ const DraggableTodo: React.FC<DraggableTodoProps> = ({
       {...attributes}
       {...(!disabled ? listeners : {})}
       className={`
-        group relative flex items-center justify-between bg-stone-200 rounded-xl
+        draggable-todo group relative flex items-center justify-between bg-stone-200 rounded-xl
         px-5 py-5 text-lg transition-shadow hover:shadow-md
         md:px-7 md:py-7 md:text-xl
         ${todo.completed ? "opacity-80" : ""}
@@ -48,7 +48,7 @@ const DraggableTodo: React.FC<DraggableTodoProps> = ({
       onDoubleClick={onDoubleClick}
     >
       <span
-        className="font-semibold flex-1 truncate text-stone-700 md:text-stone-500 group-hover:text-stone-800 transition-colors duration-300 ease-in-out text-xl md:text-2xl"
+        className="draggable-todo-content font-semibold flex-1 truncate text-stone-700 md:text-stone-500 group-hover:text-stone-800 transition-colors duration-300 ease-in-out text-xl md:text-2xl"
         style={{ lineHeight: "44px" }}
       >
         {children}

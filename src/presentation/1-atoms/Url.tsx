@@ -13,7 +13,7 @@ const Url: FC<Props> = ({ children, className, href = "#", target }) => {
     <>
       <Link
         href={href}
-        className={`text-sm font-medium hover:underline underline-offset-4${className ? " " + className : ""}`}
+        className={`url text-sm font-medium hover:underline underline-offset-4${className ? " " + className : ""}`}
         prefetch={false}
         target={target}
         rel="noopener"
