@@ -15,7 +15,7 @@ const LeftArrowIcon: React.FC<BackArrowIconProps> = ({
     height={height}
     viewBox="0 0 24 24"
     fill="none"
-    className={className}
+    className={`left-arrow-icon${className ? " " + className : ""}`}
     {...props}
   >
     <polyline

@@ -20,8 +20,8 @@ const ProjectPage: NextPage = () => {
 
   if (!project) {
     return (
-      <BaseLayout className="project">
-        <div className="pt-24 text-center text-2xl font-bold text-stone-700">
+      <BaseLayout className="project-page">
+        <div className="project-page-not-found pt-24 text-center text-2xl font-bold text-stone-700">
           Project not found.
         </div>
       </BaseLayout>
@@ -29,23 +29,29 @@ const ProjectPage: NextPage = () => {
   }
 
   return (
-    <BaseLayout className="project">
-      <div className="mb-6 px-3 md:px-0">
+    <BaseLayout className="project-page">
+      <div className="project-page-back-btn-container mb-6 px-3 md:px-0">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 transition-colors shadow font-semibold text-stone-700 text-base"
+          className="project-page-back-btn inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-stone-200 hover:bg-stone-300 transition-colors shadow font-semibold text-stone-700 text-base"
           tabIndex={0}
         >
-          <LeftArrowIcon className="w-5 h-5 text-stone-700" width={20} height={20} />
-          <span className="block md:inline text-base md:text-base">Back to Home</span>
+          <LeftArrowIcon
+            className="project-page-back-icon w-5 h-5 text-stone-700"
+            width={20}
+            height={20}
+          />
+          <span className="project-page-back-label block md:inline text-base md:text-base">
+            Back to Home
+          </span>
         </Link>
       </div>
-      <h1 className="mb-10 text-4xl md:text-5xl md:text-6xl font-heading font-extrabold text-stone-900 px-3 md:px-0 text-left">
+      <h1 className="project-page-title mb-10 text-4xl md:text-5xl md:text-6xl font-heading font-extrabold text-stone-900 px-3 md:px-0 text-left">
         {project.name}
       </h1>
-      <div className="w-full max-w-full md:max-w-5xl mx-auto px-3 md:px-0">
+      <div className="project-page-content w-full max-w-full md:max-w-5xl mx-auto px-3 md:px-0">
         <TodoInput projectId={project.id} />
-        <div className="mt-8 md:mt-10">
+        <div className="project-page-todo-list-wrapper mt-8 md:mt-10">
           <ProjectTodoList project={project} />
         </div>
       </div>

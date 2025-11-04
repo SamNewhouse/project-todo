@@ -15,7 +15,7 @@ const CrossIcon: React.FC<CrossIconProps> = ({
     height={height}
     viewBox="0 0 24 24"
     fill="none"
-    className={className}
+    className={`cross-icon${className ? " " + className : ""}`}
     {...props}
   >
     <line

@@ -70,7 +70,7 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
   return (
     <>
       {todos.length > 0 && (
-        <p className="text-stone-400 text-sm mb-2 select-none text-center">
+        <p className="project-todo-list-hint text-stone-400 text-sm mb-2 select-none text-center">
           Double-click a todo to edit
         </p>
       )}
@@ -81,7 +81,7 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
         modifiers={[restrictToWindowEdges]}
       >
         <SortableContext items={todos.map((t) => t.id)} strategy={verticalListSortingStrategy}>
-          <ul className="w-full space-y-3">
+          <ul className="project-todo-list-ul w-full space-y-3">
             {todos.map((todo) => {
               const isEditing = editingId === todo.id;
               const isFlashed = flashedId === todo.id;
@@ -96,7 +96,7 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
                 >
                   <>
                     <div
-                      className="flex items-center gap-6 flex-1 h-full"
+                      className="project-todo-list-row flex items-center gap-6 flex-1 h-full"
                       onDoubleClick={() => !isEditing && handleEditStart(todo.id, todo.text)}
                     >
                       <Checkbox
@@ -110,20 +110,21 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
                           )
                         }
                         onDoubleClick={(e) => e.stopPropagation()}
+                        className="project-todo-list-checkbox"
                       />
                       {isEditing ? (
                         <TextInput
                           value={editValue}
                           onChange={(e) => setEditValue(e.target.value)}
                           onKeyDown={(e) => e.key === "Enter" && handleEditSave(todo.id)}
-                          className="flex-1 border border-gray-300 rounded px-3 py-2 shadow-none bg-white text-xl h-full"
+                          className="project-todo-list-edit-input flex-1 border border-gray-300 rounded px-3 py-2 shadow-none bg-white text-xl h-full"
                           autoFocus
                           onBlur={() => setEditingId(null)}
                           style={{ height: "40px", fontSize: "1.25rem" }}
                         />
                       ) : (
                         <span
-                          className={`text-xl font-semibold transition-colors duration-700 ${
+                          className={`project-todo-list-text text-xl font-semibold transition-colors duration-700 ${
                             todo.completed ? "line-through text-stone-500" : "text-stone-900"
                           } ${isFlashed ? "text-stone-400" : ""}`}
                           style={{ lineHeight: "40px" }}
@@ -134,7 +135,7 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
                     </div>
                     {!isEditing && (
                       <button
-                        className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity p-0 bg-transparent border-none"
+                        className="project-todo-list-remove-btn absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity p-0 bg-transparent border-none"
                         aria-label="Delete"
                         onClick={() =>
                           dispatch(
@@ -148,7 +149,7 @@ const ProjectTodoList: React.FC<ProjectTodoListProps> = ({ project }) => {
                         type="button"
                       >
                         <CrossIcon
-                          className="transition-colors duration-300 text-stone-400 hover:text-red-500"
+                          className="project-todo-list-remove-icon transition-colors duration-300 text-stone-400 hover:text-red-500"
                           width={32}
                           height={32}
                         />
